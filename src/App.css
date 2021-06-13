@@ -1,0 +1,1461 @@
+.App {
+  font-size: 14px;
+  background-color: #0c0c0c;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.App #Header {
+  height: 10vh;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App #Header .side-profile {
+  height: 10vh;
+}
+
+.App #Header .side-profile .navbar-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.App #Header .side-profile .navbar-home a {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+  height: 30px;
+  line-height: 10vh;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.App #Header .account a {
+  display: block;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.App #Header .navbar .Header-navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App #Header .navbar .Header-navbar a {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 15px;
+  text-decoration: none;
+}
+
+.App #Header .navbar .Header-navbar .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 15px;
+}
+
+.App #Header .navbar .Header-navbar .user img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px red solid;
+  border-radius: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App #Header .navbar .Header-navbar .user p {
+  line-height: 30px;
+  display: block;
+  color: #f0f0f0;
+}
+
+.App #content-container .container {
+  width: 80vw;
+}
+
+.App #content-container .container .FilterStorage {
+  width: 100%;
+  height: 10vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App #content-container .container .FilterStorage .NewItem {
+  height: 32px;
+  font-weight: 600;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 15px;
+  border-radius: 3px;
+  background-color: #bc9864;
+  border: 1px solid #bc9864;
+}
+
+.App #content-container .container .FilterStorage .NewItem .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 125px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+
+.App #content-container .container .FilterStorage .NewItem .button p {
+  line-height: 30px;
+}
+
+.App #content-container .container .FilterStorage .NewItem .button img {
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.App #content-container .container .FilterStorage .SearchBox {
+  width: 100%;
+  max-width: 20%;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App #content-container .container .FilterStorage .SearchBox input {
+  width: 100%;
+  max-width: 90%;
+  height: 30px;
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0 5px;
+}
+
+.App #content-container .container .FilterStorage .SearchBox input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.App #content-container .container .FilterStorage .SearchBox .icon {
+  width: 32px;
+  height: 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2px 4px;
+  background-color: #bc9864;
+  border: 1px solid #bc9864;
+}
+
+.App #content-container .container .FilterStorage .SearchBox .icon img {
+  -webkit-transform: translateY(4px) scale(0.9);
+          transform: translateY(4px) scale(0.9);
+}
+
+.App #content-container .container .FilterStorage .SearchBox .icon:focus {
+  opacity: 1;
+  outline: none;
+}
+
+.App #content-container .container .listItem {
+  width: 80vw;
+  height: 60vh;
+}
+
+.App #content-container .container .listItem .HeaderStorage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+
+.App #content-container .container .listItem .HeaderStorage .tag {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 10vw;
+  min-width: 100px;
+  height: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App #content-container .container .listItem .HeaderStorage .tag p {
+  width: 100%;
+  font-size: 14px;
+  padding: 0 15px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 !important;
+}
+
+.App #content-container .container .listItem .HeaderStorage .tag.image {
+  min-width: 100px;
+  text-align: center;
+}
+
+.App #content-container .container .listItem .HeaderStorage .tag.name {
+  min-width: 100px;
+}
+
+.App #content-container .container .listItem .HeaderStorage .tag.small {
+  max-width: 5vw;
+  min-width: 100px;
+}
+
+.App #content-container .container .listItem .HeaderStorage .tag.action {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  min-width: 150px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App #content-container .container .listItem .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  height: 100%;
+  max-height: 11vh;
+  min-height: 70px;
+}
+
+.App #content-container .container .listItem .item p {
+  width: 100%;
+  font-size: 14px;
+  padding: 0 15px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 !important;
+}
+
+.App #content-container .container .listItem .item .tag {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 10vw;
+  min-width: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App #content-container .container .listItem .item .tag.name {
+  min-width: 100px;
+}
+
+.App #content-container .container .listItem .item .tag.image {
+  min-width: 100px;
+}
+
+.App #content-container .container .listItem .item .tag.image img {
+  margin: 0 auto;
+}
+
+.App #content-container .container .listItem .item .tag.small {
+  max-width: 5vw;
+  min-width: 100px;
+}
+
+.App #content-container .container .listItem .item .tag.action {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 150px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App #content-container .container .listItem .item .tag.action .left {
+  margin-left: 15px;
+}
+
+.App #content-container .container .listItem .item .tag.action .right {
+  margin-right: 15px;
+}
+
+.App #content-container .container .listItem .item .tag.action button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+  background-color: #bc9864;
+  border: none;
+}
+
+.App #content-container .container .listItem .item .tag.action button img {
+  width: 20px;
+  height: 20px;
+}
+
+.App #content-container .container .listItem .item .tag.action button a {
+  width: 20px;
+  height: 20px;
+}
+
+.App #content-container .container .PaginationStorage {
+  width: 80vw;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App #content-container .container .PaginationStorage .CurrentPage {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App #content-container .container .PaginationStorage .CurrentPage .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: -apple-system,  BlinkMacSystemFont, 'Segoe UI', 'Roboto',  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',  'Droid Sans', 'Helvetica Neue', sans-serif;
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-weight: 500;
+  background: none;
+  color: #bc9864;
+  border: 1px solid #bc9864;
+}
+
+.App #content-container .container .PaginationStorage .CurrentPage .button.active {
+  background-color: #bc9864;
+  color: #000;
+}
+
+.App #content-container .container .PaginationStorage .CurrentPage .button img {
+  height: 13px;
+  color: #bc9864;
+}
+
+.App #Side-menu {
+  width: 10vw;
+  height: 100vh;
+  padding: 10vh 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.App #Side-menu .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.App #Side-menu .user .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 10vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App #Side-menu .user .avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.App #Side-menu .user p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 10px;
+}
+
+.App #Side-menu .side {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 0;
+}
+
+.App #Side-menu .side.end {
+  border: none;
+}
+
+.App #Side-menu .side.end a {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.App #Side-menu .item a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.App .Profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95vw;
+  height: 100vh;
+  -webkit-animation: ShowUp 1s forwards;
+          animation: ShowUp 1s forwards;
+}
+
+@-webkit-keyframes ShowUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ShowUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .Profile .edit {
+  width: 80vw;
+  height: 100%;
+}
+
+.App .Profile .edit .edit-container {
+  position: relative;
+  width: 320px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.App .Profile .edit .edit-container .input {
+  width: 100%;
+}
+
+.App .Profile .edit .edit-container .input .info {
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.App .Profile .edit .edit-container .input .info:focus {
+  outline: none;
+}
+
+.App .Profile .edit .edit-container .avatar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.App .Profile .edit .edit-container .avatar .avatar-icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App .Profile .edit .edit-container .avatar .avatar-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App .Profile .edit .edit-container .avatar .camera-icon {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  bottom: 30px;
+  right: 0;
+}
+
+.App .Profile .edit .edit-container .avatar .camera-icon img {
+  background-color: #bc9864;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App .Profile .edit .edit-container .input-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 40px;
+}
+
+.App .Profile .edit .edit-container .input-img .input-file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.App .Profile .edit .edit-container .input-img .input-file input[type="file"] {
+  display: none;
+}
+
+.App .Profile .edit .edit-container .input-img .input-file label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 16px;
+  height: 50%;
+  margin: 0 15px 0 0 !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  border: 1px solid #bc9864;
+  background-color: #bc9864;
+}
+
+.App .Profile .edit .edit-container .input-img .input-file label p {
+  margin: 0 !important;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.App .Profile .edit .edit-container .button-add {
+  margin: 20px 0;
+}
+
+.App .Profile .edit .edit-container .button-add button {
+  width: 100%;
+  border: none;
+  min-height: 40px;
+  padding: 8px 16px;
+  min-width: 64px;
+  font-weight: 600;
+  background-color: #bc9864;
+  border: 1px solid #bc9864;
+  border-radius: 5px;
+}
+
+.App .Profile .edit .edit-container .button-add p {
+  margin: 0 !important;
+  color: #000;
+}
+
+.App .Storage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: showUp 1s forwards;
+          animation: showUp 1s forwards;
+}
+
+@-webkit-keyframes showUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .Customers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: showUp 1s forwards;
+          animation: showUp 1s forwards;
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .New-Product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.App .New-Product p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.App .New-Product .preview {
+  width: 100%;
+  max-width: 40%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px;
+}
+
+.App .New-Product .preview .preview-img {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App .New-Product .preview .preview-img .position-img-reload {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.App .New-Product .preview .preview-img .position-img-reload .pv-img {
+  position: relative;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.App .New-Product .preview .preview-img .position-img-reload .pv-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.App .New-Product .preview .preview-img .position-img-change {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.App .New-Product .preview .preview-img .position-img-change .each-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.App .New-Product .preview .preview-img .position-img-change .each-item .mini-img {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  top: 30vh;
+  left: 10%;
+  height: 40vh;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.App .New-Product .preview .preview-img .position-img-change .each-item .mini-img button {
+  background-color: black;
+  margin-bottom: 5px;
+}
+
+.App .New-Product .preview .preview-img .position-img-change .each-item .pv-img {
+  position: relative;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: showUp 1s forwards;
+          animation: showUp 1s forwards;
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .New-Product .preview .preview-img .position-img-change .each-item .pv-img.active {
+  -webkit-animation: showUp2 1s forwards;
+          animation: showUp2 1s forwards;
+}
+
+@-webkit-keyframes showUp2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showUp2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .New-Product .preview .preview-img .position-img-change .each-item .pv-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.App .New-Product .preview .preview-img .position-img-change .each-item .non-img {
+  position: relative;
+  width: 50%;
+  height: 60vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px rgba(255, 255, 255, 0.3) dashed;
+  border-radius: 5px;
+}
+
+.App .New-Product .preview .preview-img .position-img-change .flex {
+  position: absolute;
+  z-index: 5;
+  top: 93%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+}
+
+.App .New-Product .preview .preview-img .position-img-change .flex button {
+  width: 100%;
+  max-width: 19%;
+  height: 5px;
+  background: none;
+  border: 1px solid #bc9864;
+}
+
+.App .New-Product .preview .preview-img .position-img-change .flex button:focus {
+  background-color: #bc9864;
+}
+
+.App .New-Product .input-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  max-width: 40%;
+  height: 80vh;
+  padding: 15px;
+  -webkit-animation: 1s previewModeOff forwards;
+          animation: 1s previewModeOff forwards;
+}
+
+@-webkit-keyframes previewModeOff {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes previewModeOff {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .New-Product .input-info.beforeActive {
+  -webkit-animation: 1s previewMode forwards;
+          animation: 1s previewMode forwards;
+}
+
+@-webkit-keyframes previewMode {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes previewMode {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.App .New-Product .input-info .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  width: 100%;
+  height: 90%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .New-Product .input-info .input p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.App .New-Product .input-info .input input {
+  color: #bc9864;
+  padding: 5px;
+  height: 30px;
+}
+
+.App .New-Product .input-info .input .input-title h2 {
+  font-size: 50px;
+  font-weight: lighter;
+  margin: 0 !important;
+  color: #bc9864;
+}
+
+.App .New-Product .input-info .input .input-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 20%;
+  min-height: 40px;
+}
+
+.App .New-Product .input-info .input .input-img .input-file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.App .New-Product .input-info .input .input-img .input-file input[type="file"] {
+  display: none;
+}
+
+.App .New-Product .input-info .input .input-img .input-file label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 16px;
+  height: 50%;
+  margin: 0 15px 0 0 !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  border: 1px solid #bc9864;
+  background-color: #bc9864;
+}
+
+.App .New-Product .input-info .input .input-img .input-file label p {
+  margin: 0 !important;
+  color: #000;
+}
+
+.App .New-Product .input-info .input .input-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 30%;
+  min-height: 180px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App .New-Product .input-info .input .input-part .l1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: 100%;
+  min-height: 60px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .New-Product .input-info .input .input-part .l1 .string {
+  width: 100%;
+  max-width: 48%;
+}
+
+.App .New-Product .input-info .input .input-part .l1 .string p {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.App .New-Product .input-info .input .input-part .l1 .string input {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.03);
+  border-radius: 5px;
+}
+
+.App .New-Product .input-info .input .input-part .l1 .string input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.App .New-Product .input-info .input .input-part .l1 .string input .inputDate {
+  background-color: red !important;
+}
+
+.App .New-Product .input-info .input .input-part .string textarea {
+  width: 100%;
+}
+
+.App .New-Product .input-info .input .input-description {
+  width: 100%;
+  height: 40%;
+  min-height: 100px;
+}
+
+.App .New-Product .input-info .input .input-description .string {
+  height: 100%;
+}
+
+.App .New-Product .input-info .input .input-description .string p {
+  color: rgba(255, 255, 255, 0.4);
+  max-height: 20%;
+}
+
+.App .New-Product .input-info .input .input-description .string textarea {
+  width: 100%;
+  height: 100%;
+  max-height: 85%;
+  padding: 5px;
+  resize: none !important;
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.03);
+  border-radius: 5px;
+}
+
+.App .New-Product .input-info .input .input-description .string textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.App .New-Product .input-info .position-button {
+  width: 100%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .New-Product .input-info .position-button .box1 .standard p {
+  margin: 0 !important;
+  color: #bc9864;
+}
+
+.App .New-Product .input-info .position-button .box2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .New-Product .input-info .position-button .box2 .alert-complete {
+  margin-right: 15px;
+  opacity: 0;
+}
+
+.App .New-Product .input-info .position-button .box2 .alert-complete p {
+  line-height: 39px;
+  margin: 0 !important;
+}
+
+.App .New-Product .input-info .position-button .box2 .alert-complete.active {
+  -webkit-animation: showUp 1s forwards;
+          animation: showUp 1s forwards;
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .New-Product .input-info .position-button .box2 .button-add {
+  margin-right: 15px;
+}
+
+.App .New-Product .input-info .position-button .box2 .button-add button {
+  border: none;
+  min-height: 32px;
+  padding: 8px 16px;
+  min-width: 64px;
+  font-weight: 600;
+  background-color: #bc9864;
+  border: 1px solid #bc9864;
+  border-radius: 5px;
+}
+
+.App .New-Product .input-info .position-button .box2 .button-add p {
+  margin: 0 !important;
+  color: #000;
+}
+
+.App .New-Product .input-info .position-button .box2 .button-cancel {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  opacity: 0.6;
+}
+
+.App .New-Product .input-info .position-button .box2 .button-cancel button {
+  border: none;
+  min-height: 32px;
+  min-width: 64px;
+  padding: 8px 16px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid #bc9864;
+  border-radius: 5px;
+}
+
+.App .New-Product .input-info .position-button .box2 .button-cancel a {
+  margin: 0 !important;
+  color: #bc9864;
+}
+
+.App .New-Product .input-info .position-button .box2 .button-cancel a:hover {
+  text-decoration: none;
+}
+
+.App .Authentication {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.App .Authentication .content {
+  position: relative;
+  width: 350px;
+  height: 560px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.08);
+  -webkit-animation: ShowUp 1.5s forwards;
+          animation: ShowUp 1.5s forwards;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@keyframes ShowUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .Authentication .content .user-info {
+  width: 90%;
+  min-height: 135px;
+}
+
+.App .Authentication .content .user-info.login {
+  min-height: 110px;
+}
+
+.App .Authentication .content .user-info h3 {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  margin-bottom: 5px;
+  height: 20px;
+  text-transform: capitalize;
+}
+
+.App .Authentication .content .user-info .input {
+  width: 100%;
+}
+
+.App .Authentication .content .user-info .input .info {
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.App .Authentication .content .user-info .input .info:focus {
+  outline: none;
+}
+
+.App .Authentication .content .flex-l1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 90%;
+}
+
+.App .Authentication .content .flex-l1 p {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.App .Authentication .content .flex-l1 input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0;
+}
+
+.App .Authentication .content .flex-l1 .sl1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 40%;
+}
+
+.App .Authentication .content .flex-l1 .sl1 p {
+  margin-left: 10px;
+}
+
+.App .Authentication .content .flex-l1 .sl2 {
+  width: 100%;
+  max-width: 40%;
+}
+
+.App .Authentication .content .flex-l1 .sl2 p {
+  text-align: right;
+}
+
+.App .Authentication .content .flex-l2 {
+  width: 100%;
+}
+
+.App .Authentication .content .flex-l2 p {
+  height: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.App .Authentication .content .flex-l2 p a {
+  margin-left: 5px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.App .Authentication .content .button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 90%;
+  font-weight: 600;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #bc9864;
+  background-color: #bc9864;
+  cursor: pointer;
+  margin: 15px 0;
+}
+
+.App .Authentication .content .button p {
+  text-align: center;
+  padding: 8px 16px;
+}
+
+.App .Authentication .content .cancel {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.App .Authentication .content .cancel a {
+  height: 20px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.App .Products {
+  width: 100%;
+  max-width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/*# sourceMappingURL=App.css.map */
