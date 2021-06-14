@@ -5,7 +5,7 @@ class InputCreateUser extends Component {
             return (
                 <div className="input">
                     { name === 'name' ?
-                        <input className="info" type="text"
+                        <input className="info" type="type"
                             name={name}
                             placeholder="name@example"
                             autoComplete="off"

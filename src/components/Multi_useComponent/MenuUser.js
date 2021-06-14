@@ -1,9 +1,13 @@
 // ROUTER
 import avatar from "../logo/avatar.jpg"
-import { Link } from "react-router-dom";
-// import {UserContext} from "../../context/UserContext"
+import { Link, withRouter } from "react-router-dom";
+// CONTEXT
+import auth from "../ProtectRoutes/auth";
+import { useContext } from "react";
+import {UserContext} from "../../context/UserContext"
 //================COMPONENT===================//
 const MenuUser = ( props ) => {
+    const { ChangeStateLog , idUser } = useContext(UserContext)
     return (
         <div id="Side-menu">
             <div className="user">
@@ -16,13 +20,20 @@ const MenuUser = ( props ) => {
                 <div className="item"><Link to="/profile" onClick={() => console.log(1)}>profile</Link></div>
             </div>
             <div className="side">
-                <div className="item"><Link to="/storage">Cart</Link></div>
-                <div className="item"><Link to="/storage">Orders</Link></div>
+                <div className="item"><Link to="/checkout">Cart</Link></div>
+                <div className="item"><Link to="/history">history</Link></div>
             </div>
             <div className="side end">
-                <div className="item"><Link to="/authentication">log out</Link></div>
+                <div className="item">
+                    <button onClick={() => auth.logout(() => {
+                        ChangeStateLog(idUser,"Logout")
+                        props.history.push("/")
+                    })}>
+                        log out
+                    </button>
+                </div>
             </div>
         </div>
     )
 }
-export default MenuUser;
+export default withRouter(MenuUser);

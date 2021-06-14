@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // CONTEXT
 import './App.css'
 import NumberProvider from "./context/CartContext";
-import UserProvider from "./context/UserContext";
+import UserProvider  from "./context/UserContext";
 // COMPONENT
 import Home from "./components/Home"
 import Storage from "./components/SmallComponent/Storage/Storage";
@@ -16,6 +16,7 @@ import ProfileAdmin from "./components/SmallComponent/Account/ProfileAdmin";
 import Customers from "./components/SmallComponent/User/Customers";
 import ProtectRoutesUser from "./components/ProtectRoutes/ProtectRoutesUser"
 import ProtectRoutesAdmin from "./components/ProtectRoutes/ProtectRoutesAdmin"
+
 const  App = () => {
     return (
             <NumberProvider>
@@ -33,7 +34,7 @@ const  App = () => {
                                             component={NewProduct}
                                         />
                                         <ProtectRoutesAdmin
-                                            path="/edit/:itemId"
+                                            path="/edit"
                                             component={EditProduct}
                                         />
                                         <ProtectRoutesAdmin
@@ -41,13 +42,11 @@ const  App = () => {
                                             component={Customers}
                                         />
                                         <ProtectRoutesAdmin
-                                            exact
-                                            path="/profile=admin/:adminId"
+                                            path="/admin"
                                             component={ProfileAdmin}
                                         />
                                         <ProtectRoutesUser
-                                            exact
-                                            path="/profile=user/:userId"
+                                            path="/user"
                                             component={ProfileUser}
                                         />
                                         <Route path="/authentication" exact component={Authentication} />

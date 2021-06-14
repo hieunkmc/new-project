@@ -4,9 +4,10 @@ import { UserContext } from "../../../../context/UserContext";
 // ROUTER
 import { Link , withRouter } from "react-router-dom";
 import auth from "../../../ProtectRoutes/auth";
-import admin from "../../../ProtectRoutes/admin";
+// import admin from "../../../ProtectRoutes/admin";
 // FIREBASE
 import firebase from "../../../../firebase/firebase"
+import admin from "../../../ProtectRoutes/admin";
 //COMPONENTS
 const Login = (props) => {
     const { idUser , ChangeStateLog } = useContext(UserContext);
@@ -20,20 +21,18 @@ const Login = (props) => {
             const res = await ref
                     .where('id', '==' , uid)
                     .get()
-            res.docs.forEach((doc) => {
-                setDataUser(doc.data())
-            })
-            auth.login(() => console.log('user active'))
+                    res.docs.forEach((doc) => {
+                        setDataUser(doc.data())
+                    })
         }
         else {
             const ref = firebase.firestore().collection('admin')
             const res = await ref
                     .where('id', '==' , uid)
                     .get()
-            res.docs.forEach((doc) => {
-                setDataUser(doc.data())
-            })
-            admin.login(() =>  console.log('admin active'))
+                    res.docs.forEach((doc) => {
+                        setDataUser(doc.data())
+                    })
         }
     }
     const { name , url } = dataUser
@@ -43,11 +42,11 @@ const Login = (props) => {
                 <div className="user">
                     {
                         idUser !== "4aPienVKCXh3MgJAnlOrk4Y9P463" ?
-                            <Link to="/profile=user/idUser">
+                            <Link to={`/user/${idUser}`}>
                                 <img alt="icon"/>
                             </Link>
                             :
-                            <Link to="/profile=admin/:4aPienVKCXh3MgJAnlOrk4Y9P463">
+                            <Link to="/admin/4aPienVKCXh3MgJAnlOrk4Y9P463">
                                 <img alt="icon"/>
                             </Link>
                         // !url ?
@@ -64,12 +63,22 @@ const Login = (props) => {
                 <Link to="/checkout" >
                     cart
                 </Link>
-                <button onClick={() => auth.logout(() => {
-                    ChangeStateLog("Logout")
-                    props.history.push("/")
-                })}>
-                    Log out
-                </button>
+                {
+                    idUser !== "4aPienVKCXh3MgJAnlOrk4Y9P463" ?
+                        <button onClick={() => auth.logout(() => {
+                            ChangeStateLog(idUser,"Logout")
+                            props.history.push("/")
+                        })}>
+                            log out
+                        </button>
+                    :
+                        <button onClick={() => admin.logout(() => {
+                            ChangeStateLog(idUser,"Logout")
+                            props.history.push("/")
+                        })}>
+                            log out
+                        </button>
+                }
             </div>
         </div>
     )

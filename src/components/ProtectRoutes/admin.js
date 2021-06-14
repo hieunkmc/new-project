@@ -14,8 +14,8 @@ class Admin {
     }
 
     isAuthenticated() {
+        console.log(this.authenticated)
         return this.authenticated;
-
     }
 }
 export default new Admin();

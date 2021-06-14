@@ -10,7 +10,7 @@ import InputCreateUser from "../../Multi_useComponent/InputCreateUser";
 import { UserContext } from "../../../context/UserContext";
 //================COMPONENT===================//
 const Authentication = ( props ) => {
-    const { ChangeStateLog, setIdUser } = useContext(UserContext);
+    const { ChangeStateLog } = useContext(UserContext);
     const [ user , setUser]   = useState({
         email: '',
         password: '',
@@ -23,25 +23,18 @@ const Authentication = ( props ) => {
                     const adminId = "4aPienVKCXh3MgJAnlOrk4Y9P463"
                     const uid = response.user.uid
                     if ( response.operationType === "signIn" ) {
+                        const name = 'userId';
+                        const valueId = uid
+                        document.cookie= name + '=' + valueId
                         if ( uid !== adminId ) {
-                            console.log('user' , auth)
                             auth.login(() => {
-                                const name = 'userId';
-                                const valueId = uid
-                                document.cookie= name + '=' + valueId
-                                setIdUser(uid)
-                                ChangeStateLog("Success")
+                                ChangeStateLog(uid,"user")
                                 props.history.push("/")
                             })
                         }
                         else {
-                            console.log('admin' , admin)
                             admin.login(() => {
-                                const name = 'userId';
-                                const valueId = uid
-                                document.cookie= name + '=' + valueId
-                                setIdUser(uid)
-                                ChangeStateLog("Success")
+                                ChangeStateLog(uid,"admin")
                                 props.history.push("/")
                             })
                         }
