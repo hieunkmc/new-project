@@ -1,19 +1,23 @@
 import React, {useContext, useEffect, useState} from "react";
+// LOGO
+import logo from "../../../logo/logo.png"
 // CONTEXT
 import { UserContext } from "../../../../context/UserContext";
+import { CartContext } from "../../../../context/CartContext";
 // ROUTER
 import { Link , withRouter } from "react-router-dom";
 import auth from "../../../ProtectRoutes/auth";
-// import admin from "../../../ProtectRoutes/admin";
+import admin from "../../../ProtectRoutes/admin";
 // FIREBASE
 import firebase from "../../../../firebase/firebase"
-import admin from "../../../ProtectRoutes/admin";
 //COMPONENTS
 const Login = (props) => {
     const { idUser , ChangeStateLog } = useContext(UserContext);
+    const { Item } = useContext(CartContext);
     const [ dataUser , setDataUser ] = useState({})
     useEffect(() =>{
         LoadDataId(idUser)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[idUser])
     const LoadDataId = async (uid) => {
         if ( uid !== "4aPienVKCXh3MgJAnlOrk4Y9P463") {
@@ -43,42 +47,45 @@ const Login = (props) => {
                     {
                         idUser !== "4aPienVKCXh3MgJAnlOrk4Y9P463" ?
                             <Link to={`/user/${idUser}`}>
-                                <img alt="icon"/>
+                                { dataUser.url === "" ?
+                                    <img alt="icon" src={logo} />
+                                    :
+                                    <img alt="icon" src={url} />
+                                }
                             </Link>
                             :
                             <Link to="/admin/4aPienVKCXh3MgJAnlOrk4Y9P463">
-                                <img alt="icon"/>
+                                { dataUser.url === "" ?
+                                    <img alt="icon" src={logo} />
+                                    :
+                                    <img alt="icon" src={url} />
+                                }
                             </Link>
-                        // !url ?
-                        // <Link to="/profile">
-                        //     <img alt="icon"/>
-                        // </Link>
-                        // :
-                        // <Link to="/profile">
-                        //     <img alt="icon" src={url}/>
-                        // </Link> 
                     }
-                    <p>{name}</p>   
+                        <p>{name}</p>   
                 </div>
-                <Link to="/checkout" >
-                    cart
-                </Link>
+                <button>
+                    <Link to="/checkout">
+                        cart
+                    </Link>
+                </button>
                 {
                     idUser !== "4aPienVKCXh3MgJAnlOrk4Y9P463" ?
                         <button onClick={() => auth.logout(() => {
                             ChangeStateLog(idUser,"Logout")
                             props.history.push("/")
                         })}>
-                            log out
+                            logout
                         </button>
                     :
                         <button onClick={() => admin.logout(() => {
                             ChangeStateLog(idUser,"Logout")
                             props.history.push("/")
                         })}>
-                            log out
+                            logout
                         </button>
                 }
+
             </div>
         </div>
     )

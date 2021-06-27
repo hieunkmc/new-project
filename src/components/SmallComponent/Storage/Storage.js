@@ -6,8 +6,7 @@ import HeaderStorage from "./path/HeaderStorage";
 import ItemStorage from "./path/ItemStorage";
 import FilterStorage from "./path/FilterStorage";
 import PaginationStorage from "./path/PaginationStorage";
-import Menu from "../../Multi_useComponent/MenuUser";
-import Cart from "../Cart/Cart"
+import MenuAdmin from "../../Multi_useComponent/MenuAdmin";
 // ------------------------------------------ //
 const Storage = () => {
     const [Products, setProducts] = useState([]);
@@ -15,13 +14,12 @@ const Storage = () => {
     const [totalProduct, setTotalProduct ] = useState([])
     const [SearchProduct, setSearchProduct] = useState();
     useEffect(() => {
-        const localData = JSON.parse(localStorage.getItem('ItemInPage'))
         const localTotalPage = JSON.parse(localStorage.getItem('TotalPage'))
         const localCurrentPage = JSON.parse(localStorage.getItem('CurrentPage'))
-            if ( localData ) {
-                setProducts(localData)
+            if ( localCurrentPage ) {
                 setTotalProduct(localTotalPage)
                 setCurrentPage(localCurrentPage)
+                LoadByCurrentPage(localCurrentPage)
             }
             else {
                 LoadData()
@@ -35,9 +33,9 @@ const Storage = () => {
         const arr = []
             res.docs.forEach((doc) => {
                 arr.push(doc.data())
+                console.log(arr)
             })
             setProducts(arr)
-            localStorage.setItem('ItemInPage', JSON.stringify(arr));
     }
     const LoadByCurrentPage = async (newCurrentPage) => {
         const ref = firebase.firestore().collection('products')
@@ -57,7 +55,6 @@ const Storage = () => {
                         arr.push(doc.data())
                     })
                     setProducts(arr)
-                    localStorage.setItem('ItemInPage', JSON.stringify(arr));
                     localStorage.setItem('CurrentPage', JSON.stringify(newCurrentPage));
             return null
         }
@@ -82,7 +79,7 @@ const Storage = () => {
             await ref.doc(item.id).delete()
         const res = await ref.orderBy('value').get()
             await res.docs.map((doc) => 
-                ref.doc('total_product').update({ value: +doc.data.val().value - 1 })
+                ref.doc('total_product').update({ value: +doc.data.value - 1 })
             )
         LoadData()
     }
@@ -116,9 +113,8 @@ const Storage = () => {
     }
     return(
         <div className="Storage">
-            <Menu />
+            <MenuAdmin />
             <div id="content-container">
-                <Cart />
                 <div className="container">
                     <FilterStorage 
                         value = {SearchProduct}
@@ -127,8 +123,8 @@ const Storage = () => {
                     />
                     <div className="listItem">
                         <HeaderStorage />
-                        { Products.map((item) => 
-                            <ItemStorage key={item.id} data={item} clear={(item) => Delete(item)}/>
+                        { Products.map((item,index) =>
+                            <ItemStorage key={item.id} data={item} index={index} clear={(item) => Delete(item)}/>
                         )}
                     </div>
                     <PaginationStorage 

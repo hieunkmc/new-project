@@ -10,24 +10,25 @@ export default function NumberProvider (props) {
         setIndex(index)
         setItem([item])
     }
-    // FROM <INFORMATION> active "reviewMode" 
-    const [ previewMode , setPreviewMode ] = useState(
-        { 
-            beforeActive: false,
-            afterActive: false,
+    const AddToCart = (item) =>  {
+        if ( Item.length === 0 ) {
+            console.log(item)
+            setItem(prevState => [...prevState ,item])
         }
-    )
-    const ActiveMode = () =>  {
-        setTimeout(() => {
-            setPreviewMode({
-                ...previewMode , beforeActive : !previewMode.beforeActive
-            })
-        }, 0);
-        setTimeout(() => {
-            setPreviewMode({
-                ...previewMode , afterActive : !previewMode.afterActive
-            })
-        }, 1100);
+        if ( Item.length >= 1 ){
+            // console.log( Item)
+            // console.log(item.id);
+            let find_similar_Id = Item.find(x => x.id === item.id)
+            console.log(find_similar_Id);
+            // if ( find_similar_Id === -1 ) {
+            //     const newArray = Item.concat(item)
+            //     setItem(newArray)
+            // }
+            // else {
+            //     const index = find_similar_Id
+            //     console.log(index)
+            // }
+        }
     }
     return(
         <CartContext.Provider value={{
@@ -35,9 +36,7 @@ export default function NumberProvider (props) {
                 Index: Index,
                 GiveIndex: ChangeIndex,
                 Item: Item,
-                // FROM <INFORMATION> active "previewMode" 
-                previewMode : previewMode,
-                ActiveMode: ActiveMode,
+                AddItemToCart: AddToCart,
             }}
         >
             {props.children}

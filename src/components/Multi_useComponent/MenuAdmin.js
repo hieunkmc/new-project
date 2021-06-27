@@ -1,23 +1,24 @@
 // ROUTER
-import avatar from "../logo/avatar.jpg"
-import { Link } from "react-router-dom";
+import avatar from "../logo/logo.png"
+import { Link, withRouter } from "react-router-dom";
 // CONTEXT
 import admin from "../ProtectRoutes/admin";
 import { useContext } from "react";
-import {UserContext} from "../../context/UserContext"
+import { UserContext } from "../../context/UserContext"
 //================COMPONENT===================//
 const MenuAdmin = ( props ) => {
     const { ChangeStateLog , idUser } = useContext(UserContext)
+    const { user } = props
     return (
         <div id="Side-menu">
             <div className="user">
                 <div className="avatar">
-                    <img alt="avatar" src={avatar}></img>
+                    <img alt="avatar-non" src={avatar} />
                 </div>
                 <p>Store-Keeper</p>
             </div>
             <div className="side">
-                <div className="item"><Link to="/profile" onClick={() => console.log(1)}>profile</Link></div>
+                <div className="item"><Link to="/admin">profile</Link></div>
             </div>
             <div className="side">
                 <div className="item"><Link to="/storage">dashboard</Link></div>
@@ -41,4 +42,4 @@ const MenuAdmin = ( props ) => {
         </div>
     )
 }
-export default MenuAdmin;
+export default withRouter(MenuAdmin);

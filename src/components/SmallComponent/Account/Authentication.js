@@ -5,12 +5,18 @@ import admin from "../../ProtectRoutes/admin"
 import { Link } from "react-router-dom";
 // FIREBASE 
 import firebase from '../../../firebase/firebase'
-import InputCreateUser from "../../Multi_useComponent/InputCreateUser";
 // CONTEXT
 import { UserContext } from "../../../context/UserContext";
+import { useEffect } from "react";
+// COMPONENT
+import InputPassword from "../../Multi_useComponent/InputPassword";
+import InputEmail from "../../Multi_useComponent/InputEmail";
+// LOGO
+import logo_authentication from "../../logo/logo.png"
 //================COMPONENT===================//
 const Authentication = ( props ) => {
     const { ChangeStateLog } = useContext(UserContext);
+    const [ saveUser , setSaveUser ]   = useState(false)
     const [ user , setUser]   = useState({
         email: '',
         password: '',
@@ -45,6 +51,9 @@ const Authentication = ( props ) => {
             console.log(error)
         }
     }
+    useEffect(() => {
+        console.log(saveUser)
+    },[saveUser])
     const onChange = (event) => {
         const value = event.target.value
             setUser({
@@ -56,13 +65,17 @@ const Authentication = ( props ) => {
     return (
         <div className="Authentication">
             <div className="content">
+                <div className="content-theme-logo">
+                    <img alt="logo_authentication" src= {logo_authentication} />
+                    <p>Welcome To Authentication!</p>
+                </div>
                 <div className="user-info login">
-                    <InputCreateUser 
+                    <InputEmail 
                         name="email"
                         onChange={onChange}
                         value={email}
                     />
-                    <InputCreateUser 
+                    <InputPassword 
                         name="password"
                         onChange={onChange}
                         value={password}
@@ -70,11 +83,13 @@ const Authentication = ( props ) => {
                 </div>
                 <div className="flex-l1">
                     <div className="sl1">
-                        <input type="checkbox" id="confirm" />
+                        <input type="checkbox" id="confirm" onClick={() => setSaveUser(!saveUser)}/>
                         <p>Remember</p>
                     </div>
                     <div className="sl2">
-                        <p>Forgot Password</p>
+                        <Link to="/forgot">
+                            Forgot Password?
+                        </Link>
                     </div>
                 </div>
                 <div className="button" onClick={() => ComfirmLogIn()}> 
@@ -86,6 +101,11 @@ const Authentication = ( props ) => {
                             Register Now
                         </Link>
                     </p>
+                </div>
+                <div className="cancel"> 
+                    <Link to="/">
+                        Cancel Authentication
+                    </Link>
                 </div>
             </div>
         </div>

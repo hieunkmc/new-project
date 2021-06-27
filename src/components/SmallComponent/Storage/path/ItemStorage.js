@@ -3,7 +3,7 @@ import cancel from "../../../logo/cancel.svg"
 import stop from "../../../logo/stop.svg"
 import { Link } from "react-router-dom";
 function Item ( props ) {
-    const { data , clear } = props
+    const { data, index , clear } = props
     return (
         <div className="item">
             <div className="tag">
@@ -41,10 +41,10 @@ function Item ( props ) {
                 }
             </div>
             <div className="tag">
-                <p>{data.date}</p>
+                <p>{new Date(data.create_at).toString()}</p>
             </div>
             <div className="tag">
-                <p>Update</p>
+                <p>{new Date(data.update_at).toString()}</p>
             </div>
             <div className="tag action">
                 <button className="left" onClick={() => clear(data)} >
@@ -57,7 +57,8 @@ function Item ( props ) {
                     <Link
                         to={{
                             pathname: `/edit/${data.id}`,
-                            ItemToEdit: data
+                            ItemToEdit: data,
+                            indexItem: index
                         }}>
                         <img alt="edit" src={edit}/>
                     </Link>

@@ -1,5 +1,5 @@
 // ROUTER
-import avatar from "../logo/avatar.jpg"
+import logo from "../logo/logo.png"
 import { Link, withRouter } from "react-router-dom";
 // CONTEXT
 import auth from "../ProtectRoutes/auth";
@@ -8,16 +8,21 @@ import {UserContext} from "../../context/UserContext"
 //================COMPONENT===================//
 const MenuUser = ( props ) => {
     const { ChangeStateLog , idUser } = useContext(UserContext)
+    const { user } = props
     return (
         <div id="Side-menu">
             <div className="user">
                 <div className="avatar">
-                    <img alt="avatar" src={avatar}></img>
+                    {  user.url === "" ?
+                        <img alt="avatar" src={logo} />
+                        :
+                        <img alt="avatar" src={user.url} /> 
+                    }
                 </div>
                 <p>Store-Keeper</p>
             </div>
             <div className="side">
-                <div className="item"><Link to="/profile" onClick={() => console.log(1)}>profile</Link></div>
+                <div className="item"><Link to="/profile">profile</Link></div>
             </div>
             <div className="side">
                 <div className="item"><Link to="/checkout">Cart</Link></div>

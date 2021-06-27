@@ -4,18 +4,20 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css'
 import NumberProvider from "./context/CartContext";
 import UserProvider  from "./context/UserContext";
+// PROTECT ROUTER
+import ProtectRoutesUser from "./components/ProtectRoutes/ProtectRoutesUser"
+import ProtectRoutesAdmin from "./components/ProtectRoutes/ProtectRoutesAdmin"
 // COMPONENT
-import Home from "./components/Home"
+import Home from "./components/Slider/Home"
 import Storage from "./components/SmallComponent/Storage/Storage";
 import EditProduct from "./components/SmallComponent/Products/EditProduct";
 import NewProduct from "./components/SmallComponent/Products/NewProduct";
 import Authentication from "./components/SmallComponent/Account/Authentication";
 import Register from "./components/SmallComponent/Account/Register";
+import Customers from "./components/SmallComponent/User/Customers";
 import ProfileUser from "./components/SmallComponent/Account/ProfileUser";
 import ProfileAdmin from "./components/SmallComponent/Account/ProfileAdmin";
-import Customers from "./components/SmallComponent/User/Customers";
-import ProtectRoutesUser from "./components/ProtectRoutes/ProtectRoutesUser"
-import ProtectRoutesAdmin from "./components/ProtectRoutes/ProtectRoutesAdmin"
+import ForgotPassword from "./components/SmallComponent/Account/ForgotPassword";
 
 const  App = () => {
     return (
@@ -49,6 +51,7 @@ const  App = () => {
                                             path="/user"
                                             component={ProfileUser}
                                         />
+                                        <Route path="/forgot" exact component={ForgotPassword} />
                                         <Route path="/authentication" exact component={Authentication} />
                                         <Route path="/authentication/register" component={Register} />
                                         <Route path="*" component={() => "404 NOT FOUND"} />

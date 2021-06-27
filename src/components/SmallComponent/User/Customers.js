@@ -6,31 +6,20 @@ import React, { useState , useEffect} from "react";
 // FIREBASE 
 import firebase from '../../../firebase/firebase'
 //COMPONENTS
-import HeaderStorage from "../Storage/path/HeaderStorage";
-import Item from "../Storage/path/ItemStorage";
 import FilterStorage from "../Storage/path/FilterStorage";
 import PaginationStorage from "../Storage/path/PaginationStorage";
-import Menu from "../../Multi_useComponent/MenuUser";
-// import Menu from "./User/Menu";
+import MenuAdmin from "../../Multi_useComponent/MenuAdmin";
+import ListUser from "../Storage/path/ListUser";
+import HeaderUser from "../Storage/path/HeaderUser";
 //================COMPONENT===================//
-function Customers( props ) {
+const Customers = ( props ) => {
     const [users, setUsers] = useState([]);
     const [currentPageUser, setCurrentPageUser] = useState(1);
     const [totalUser, setTotalUser ] = useState([])
     const [searchUser, setSearchUser] = useState();
     useEffect(() => {
-        const localData = JSON.parse(localStorage.getItem('UsersInPage'))
-        const localTotalPage = JSON.parse(localStorage.getItem('TotalPageUser'))
-        const localCurrentPage = JSON.parse(localStorage.getItem('CurrentPageUser'))
-            if ( localData ) {
-                setUsers(localData)
-                setTotalUser(localTotalPage)
-                setCurrentPageUser(localCurrentPage)
-            }
-            else {
-                LoadData()
-                LoadTotalProduct()
-            }
+        LoadData()
+        LoadTotalProduct()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     const LoadData = async () => {
@@ -41,7 +30,7 @@ function Customers( props ) {
                 arr.push(doc.data())
             })
             setUsers(arr)
-            localStorage.setItem('UsersInPage', JSON.stringify(arr));
+            console.log(arr)
     }
     const LoadByCurrentPage = async (newCurrentPage) => {
         const ref = firebase.firestore().collection('users')
@@ -61,8 +50,6 @@ function Customers( props ) {
                         arr.push(doc.data())
                     })
                     setUsers(arr)
-                    localStorage.setItem('UsersInPage', JSON.stringify(arr));
-                    localStorage.setItem('CurrentPageUser', JSON.stringify(newCurrentPage));
             return null
         }
     }
@@ -82,13 +69,13 @@ function Customers( props ) {
         }
     }
     const Delete = async (item) => {
-        const ref = firebase.firestore().collection('users')
-            await ref.doc(item.id).delete()
-        const res = await ref.orderBy('value').get()
-            await res.docs.map((doc) =>
-                ref.doc('total_user').update({ value: +doc.data.val().value - 1 })
-            )
-        LoadData()
+        // const ref = await firebase.firestore().collection('users')
+        // ref.doc(item.id).delete().then(()=> console.log("done"))
+        // const res = await ref.get()
+        //     res.docs.map(doc =>
+        //         ref.doc('total_user').update({ value: +doc.data.val().value - 1 })
+        //     )
+        // LoadData()
     }
     const LoadTotalProduct = async () => {
         const ref = firebase.firestore().collection('users')
@@ -100,27 +87,25 @@ function Customers( props ) {
                     array.push(page)
                 }
             setTotalUser(array)
-            localStorage.setItem('TotalPageUser', JSON.stringify(array));
         }) 
     }
     const onChange = (event) => {
         setSearchUser(event.target.value)
     }
     const onKeyUp = async ( event ) => {
-        event.preventDefault()
         if ( event.keyCode === 13 ) {
             const ref = firebase.firestore().collection('users')
             const res = await ref
-            .where('name', '==' , searchUser ) 
-            .get()
-            res.docs.forEach((doc) => {
-                console.log(doc.data())
-            })
+                .where('name', '==' , searchUser ) 
+                .get()
+                res.docs.forEach((doc) => {
+                    setUsers(doc.data())
+                })
         } 
     }
     return (
         <div className="Customers">
-        <Menu />
+        <MenuAdmin />
         <div id="content-container">
             <div className="container">
                 <FilterStorage 
@@ -128,11 +113,14 @@ function Customers( props ) {
                     onChange={(event) => onChange(event)}
                     onKeyUp= {onKeyUp}
                 />
-                
                 <div className="listItem">
-                    <HeaderStorage />
+                    <HeaderUser />
                     { users.map((item) =>
-                        <Item key={item.id} data={item} clear={(item) => Delete(item)}/>
+                        <ListUser   
+                            key={item.id}
+                            data={item}
+                            clear={(item) => Delete(item)} 
+                        />
                     )}
                 </div>
                 <PaginationStorage 

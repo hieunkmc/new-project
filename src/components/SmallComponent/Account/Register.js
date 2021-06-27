@@ -1,14 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react"
+// LOGO 
+import phone_call from "../../logo/phone.svg"
+import user2 from "../../logo/user2.svg"
 // ROUTER
-import { Link, useHistory } from "react-router-dom";
-// import {UserContext} from "../../context/UserContext"
+import { Link, withRouter , useHistory } from "react-router-dom"
 // FIREBASE 
 import firebase from '../../../firebase/firebase'
-import InputCreateUser from "../../Multi_useComponent/InputCreateUser";
+import InputEmail from "../../Multi_useComponent/InputEmail"
+import InputName from "../../Multi_useComponent/InputName"
+import InputPassword from "../../Multi_useComponent/InputPassword"
 //================COMPONENT===================//
-function Register( props ) {
+const Register = ( props ) => {
     const history = useHistory();
-    // const { ChangeStateLogIn } = useContext(UserContext)
     const [ user , setUser] = useState(
         {
             email: '',
@@ -32,12 +35,14 @@ function Register( props ) {
                                     email: email,
                                     password: password,
                                     phone: phone,
-                                    create_At: + Date.now(),
+                                    create_at: +Date.now(),
+                                    update_at: +Date.now(),
+                                    status: true,
                                     role: 'user',
                                 }
-                                userCollection.doc(newUser.id).set(newUser).then( response => {
-                                    history.push("/")
-                                })
+                                    userCollection.doc(newUser.id).set(newUser).then(response => {
+                                        history.push("/")
+                                    })
                             }
                     }
                 )
@@ -59,12 +64,12 @@ function Register( props ) {
             <div className="content">
                 <div className="user-info"> 
                     <h3>account information</h3>
-                    <InputCreateUser 
+                    <InputEmail
                         name="email"
                         onChange={onChange}
                         value={email}
                     />
-                    <InputCreateUser 
+                    <InputPassword 
                         name="password"
                         onChange={onChange}
                         value={password}
@@ -72,13 +77,15 @@ function Register( props ) {
                 </div>
                 <div className="user-info">
                     <h3>personal information</h3>
-                    <InputCreateUser 
+                    <InputName
                         name="name"
+                        icon={user2}
                         onChange={onChange}
                         value={name}
                     />
-                    <InputCreateUser 
+                    <InputName 
                         name="phone"
+                        icon={phone_call}
                         onChange={onChange}
                         value={phone}
                     />
@@ -90,11 +97,11 @@ function Register( props ) {
                 </div>
                 <div className="cancel"> 
                     <Link to="/authentication">
-                        Cancel Register 
+                        Cancel Register
                     </Link>
                 </div>
             </div>
         </div>
     )
 }
-export default Register;
+export default withRouter(Register);

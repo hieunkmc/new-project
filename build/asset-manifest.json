@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0e77772a.chunk.css",
+    "main.js": "/static/js/main.a9c7fbe6.chunk.js",
+    "main.js.map": "/static/js/main.a9c7fbe6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e60f0a07.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e60f0a07.js.map",
+    "static/js/2.1ef0d3ca.chunk.js": "/static/js/2.1ef0d3ca.chunk.js",
+    "static/js/2.1ef0d3ca.chunk.js.map": "/static/js/2.1ef0d3ca.chunk.js.map",
+    "static/js/3.eb4c6af8.chunk.js": "/static/js/3.eb4c6af8.chunk.js",
+    "static/js/3.eb4c6af8.chunk.js.map": "/static/js/3.eb4c6af8.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0e77772a.chunk.css.map": "/static/css/main.0e77772a.chunk.css.map",
+    "static/js/2.1ef0d3ca.chunk.js.LICENSE.txt": "/static/js/2.1ef0d3ca.chunk.js.LICENSE.txt",
+    "static/media/background.10edab66.mp4": "/static/media/background.10edab66.mp4",
+    "static/media/box.38687971.svg": "/static/media/box.38687971.svg",
+    "static/media/camera.d25775ca.svg": "/static/media/camera.d25775ca.svg",
+    "static/media/cancel.07d98d42.svg": "/static/media/cancel.07d98d42.svg",
+    "static/media/cart.2fb3b93a.svg": "/static/media/cart.2fb3b93a.svg",
+    "static/media/close.3d73b61b.svg": "/static/media/close.3d73b61b.svg",
+    "static/media/dog.6521aa49.svg": "/static/media/dog.6521aa49.svg",
+    "static/media/edit.04e38dcf.svg": "/static/media/edit.04e38dcf.svg",
+    "static/media/left-arrow.b64aefb9.svg": "/static/media/left-arrow.b64aefb9.svg",
+    "static/media/lock.c8df1845.svg": "/static/media/lock.c8df1845.svg",
+    "static/media/logo.28b8f356.png": "/static/media/logo.28b8f356.png",
+    "static/media/pen.958e86f3.svg": "/static/media/pen.958e86f3.svg",
+    "static/media/phone.fc2e402d.svg": "/static/media/phone.fc2e402d.svg",
+    "static/media/right-arrow.8b404385.svg": "/static/media/right-arrow.8b404385.svg",
+    "static/media/search.da3387c7.svg": "/static/media/search.da3387c7.svg",
+    "static/media/stop.1091db61.svg": "/static/media/stop.1091db61.svg",
+    "static/media/user2.42254250.svg": "/static/media/user2.42254250.svg",
+    "static/media/user3.664bc681.svg": "/static/media/user3.664bc681.svg",
+    "static/media/whatwedo.29e41686.jpg": "/static/media/whatwedo.29e41686.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e60f0a07.js",
+    "static/js/2.1ef0d3ca.chunk.js",
+    "static/css/main.0e77772a.chunk.css",
+    "static/js/main.a9c7fbe6.chunk.js"
+  ]
+}

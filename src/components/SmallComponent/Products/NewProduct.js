@@ -1,17 +1,13 @@
-import React , { useState } from "react";
-// CSS
-// SUPPORT
-// import axios from 'axios';
-// import { Link } from "react-router-dom";
+import React , { useState } from "react"
 // FIREBASE 
 import firebase from '../../../firebase/firebase'
 // import { storage } from '../firebase/firebase'
 // SMALL COMPONENTS
-import Preview from "./path/Preview";
-import Information from "./path/Information";
-import Menu from "../../Multi_useComponent/MenuUser";
+import Preview from "./path/Preview"
+import Information from "./path/Information"
+import MenuAdmin from "../../Multi_useComponent/MenuAdmin"
 //COMPONENTS
-function NewProduct (props) {
+const NewProduct = (props) => {
     // STATE DATA
     const [ state , setState ] = useState(
         {
@@ -24,16 +20,15 @@ function NewProduct (props) {
             description: '',
             url:'',
         }
-    );
+    )
     // ALERT UPDATE COMPLETE
-    const [ activeAlert , setActiveAlert ] = useState(false);
+    const [ activeAlert , setActiveAlert ] = useState(false)
     // PREVIEW IMAGE WILL CHANGE 
-    const [ img , setImg ] = useState([]);
-    // const [ imgUpload , setImgUpload ] = useState([]);
+    const [ img , setImg ] = useState([])
     // COMPLETE ADD PRODUCT
     var array = []
     function getDownloadURL(file) {
-        return new Promise(function (resolve,reject) {
+        return new Promise( resolve => {
             const storage = firebase.storage()
             storage.ref(`images/${file.name}`).put(file).on(
             'STATE_CHANGED',
@@ -52,7 +47,7 @@ function NewProduct (props) {
         })
     }
     function combineURL (url,max) {
-        return new Promise(function (resolve,reject) {
+        return new Promise(resolve => {
             array.push(url)
             if ( array.length === max ) {
                 console.log( "that the last" , array )
@@ -62,7 +57,7 @@ function NewProduct (props) {
         })
     }
     function upLoad (data) {
-        return new Promise(function (resolve,reject) {
+        return new Promise(resolve => {
             const db = firebase.firestore()
             const ref = db.collection('products')
             const newItem = {
@@ -77,14 +72,12 @@ function NewProduct (props) {
                 create_at: +Date.now(),
                 url : data
             }
-            ref.doc(newItem.id).set(newItem).then(
-                setActiveAlert(!activeAlert)
-            )
+            ref.doc(newItem.id).set(newItem).then(setActiveAlert(!activeAlert))
             resolve()
         })
     }
     async function createNewProduct(file,image) {
-        const function1 = await getDownloadURL(file);
+        const function1 = await getDownloadURL(file)
         const function2 = await combineURL(function1,image.length)
         if ( function2 !== null ) {
             const function3 = await upLoad(function2)
@@ -104,11 +97,11 @@ function NewProduct (props) {
         if (event.target.files) {
             const fileArray = Array.from(event.target.files).map((file) => URL.createObjectURL(file))
             const fileUpload = Array.from(event.target.files)
-            setImg (fileUpload)
-            setState({
-                ...state, 
-                url: fileArray
-            })
+                setImg (fileUpload)
+                setState({
+                    ...state, 
+                    url: fileArray
+                })
         }
     }
     // CHANGE CONTENT --- INPUT STRING , INPUT DESCRIPTION
@@ -121,33 +114,32 @@ function NewProduct (props) {
     }
     const totalProduct = async () => {
         const previousValue = []
-        const db = firebase.firestore()
-        const ref = db.collection('products')
+        const ref = firebase.firestore().collection('products')
         const res = await ref.orderBy('value').get()
-        await res.docs.map((doc) => previousValue.push(doc.data()))
-        ref.doc('total_product').update({ value: +previousValue[0].value + 1 })
+            res.docs.map((doc) => previousValue.push(doc.data()))
+            ref.doc('total_product').update({ value: +previousValue[0].value + 1 })
     }
     // COMPONENT
     return (
         <div className="New-Product"> 
-            <Menu />
+            <MenuAdmin />
             {/* PREVIEW PRODUCT */}
             <Preview
-                    state={state}
+                state={state}
             />
             {/* INPUT INFORMATION PRODUCT --- FLEX */}
             <Information
-                    // TITLE PAGE
-                    namePage = {'NEW PRODUCT'}
-                    nameAddImage = {'ADD IMAGE'}
-                    nameActiveAlert = {'Product was add'}
-                    // ONCHANGE VALUE
-                    addImg= {(event)=>AddImage(event)}
-                    onChange= {(event) => onChange(event)}
-                    state= {state}
-                    // COMPLETE ADD
-                    SaveEdit = {() => Add()}
-                    activeAlert = {activeAlert}
+                // TITLE PAGE
+                namePage = {'NEW PRODUCT'}
+                nameAddImage = {'ADD IMAGE'}
+                nameActiveAlert = {'Product was add'}
+                // ONCHANGE VALUE
+                addImg= {(event) => AddImage(event)}
+                onChange= {(event) => onChange(event)}
+                state= {state}
+                // COMPLETE ADD
+                SaveEdit = {() => Add()}
+                activeAlert = {activeAlert}
             />
         </div>
     )

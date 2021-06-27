@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import logo from "../../logo/white_mountaineering_wt.png"
 // CONTEXT
 import { UserContext } from "../../../context/UserContext";
 // ROUTER
@@ -12,7 +13,9 @@ const Header = (props) => {
         <div id="Header">
             <div className="side-profile">
                 <div className="navbar-home">
-                    <Link to="/" className="Header-navbar">Home</Link>
+                    <Link to="/" className="Header-navbar">
+                        <img alt="logo" src={logo} />
+                    </Link>
                 </div>
             </div>
             {   LogInSuccess  ?

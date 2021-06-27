@@ -8,11 +8,13 @@
 
 .App #Header {
   height: 10vh;
-  width: 100%;
-  margin: 0 auto;
+  width: 90vw;
+  margin-left: 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
+  z-index: 5;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -35,9 +37,13 @@
           flex-flow: row;
 }
 
+.App #Header .side-profile .navbar-home img {
+  opacity: 0.6;
+  height: 12px;
+}
+
 .App #Header .side-profile .navbar-home a {
   display: block;
-  text-transform: uppercase;
   font-size: 12px;
   height: 30px;
   line-height: 10vh;
@@ -46,12 +52,10 @@
   margin-right: 30px;
 }
 
-.App #Header .account a {
-  display: block;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-size: 12px;
+.App #Header .account img {
+  opacity: 0.6;
+  width: 20px;
+  height: 20px;
 }
 
 .App #Header .navbar .Header-navbar {
@@ -62,7 +66,7 @@
 
 .App #Header .navbar .Header-navbar a {
   display: block;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 12px;
   height: 30px;
   line-height: 30px;
@@ -89,7 +93,6 @@
   display: block;
   width: 30px;
   height: 30px;
-  border: 1px red solid;
   border-radius: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -97,11 +100,149 @@
 
 .App #Header .navbar .Header-navbar .user p {
   line-height: 30px;
+  font-size: 12px;
   display: block;
-  color: #f0f0f0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.App #Header .navbar .Header-navbar button {
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: capitalize;
+  font-size: 12px;
+  padding: 0 5px;
+  background: none;
+  border: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',  'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',  'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.App #Side-menu {
+  width: 10vw;
+  height: 100vh;
+  padding: 10vh 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.App #Side-menu .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.App #Side-menu .user .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 10vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App #Side-menu .user .avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.App #Side-menu .user p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 10px;
+}
+
+.App #Side-menu .side {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 0;
+}
+
+.App #Side-menu .side.end {
+  border: none;
+}
+
+.App #Side-menu .side.end a {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.App #Side-menu .item a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.App #Side-menu .item button {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
+  background: none;
+  border: none;
+  font-family: -apple-system,  BlinkMacSystemFont, 'Segoe UI', 'Roboto',  'Oxygen', 'Ubuntu', 'Cantarell',  'Fira Sans', 'Droid Sans',  'Helvetica Neue', sans-serif;
+}
+
+.App #input {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.App #input .icon {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  opacity: 0.3;
+  top: 12.5px;
+  left: 7.5px;
+}
+
+.App #input .info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 5px 15px 5px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.01);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.App #input .info:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.App #SidePresent {
+  width: 100%;
+}
+
+.App #SidePresent p {
+  height: 60px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 60px;
+  line-height: 40px;
+  letter-spacing: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .App #content-container .container {
+  margin-top: 10vh;
   width: 80vw;
 }
 
@@ -226,9 +367,7 @@
 }
 
 .App #content-container .container .listItem .HeaderStorage .tag {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,7 +405,7 @@
 }
 
 .App #content-container .container .listItem .HeaderStorage .tag.action {
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   min-width: 150px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -288,14 +427,12 @@
 .App #content-container .container .listItem .item p {
   width: 100%;
   font-size: 14px;
-  padding: 0 15px;
   color: rgba(255, 255, 255, 0.6);
   margin: 0 !important;
 }
 
 .App #content-container .container .listItem .item .tag {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -305,8 +442,14 @@
   width: 100%;
   max-width: 10vw;
   min-width: 100px;
+  padding: 0 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.App #content-container .container .listItem .item .tag.user {
+  max-width: 15vw;
+  word-wrap: break-word;
 }
 
 .App #content-container .container .listItem .item .tag.name {
@@ -327,7 +470,6 @@
 }
 
 .App #content-container .container .listItem .item .tag.action {
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,14 +477,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.App #content-container .container .listItem .item .tag.action .left {
-  margin-left: 15px;
-}
-
-.App #content-container .container .listItem .item .tag.action .right {
-  margin-right: 15px;
 }
 
 .App #content-container .container .listItem .item .tag.action button {
@@ -431,16 +565,391 @@
   color: #bc9864;
 }
 
-.App #Side-menu {
-  width: 10vw;
+.App .Products {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
   height: 100vh;
-  padding: 10vh 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  -webkit-animation: Home_Show_Up 0.5s forwards;
+          animation: Home_Show_Up 0.5s forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
-.App #Side-menu .user {
+@-webkit-keyframes Home_Show_Up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes Home_Show_Up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .Products video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.4;
+}
+
+.App .Products .view-slide {
+  position: absolute;
+  margin-top: 20vh;
+  left: 5vw;
+  width: 90%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .Products .view-slide .side-content {
+  width: 100%;
+  max-width: 230px;
+}
+
+.App .Products .view-slide .side-content p {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.App .Products .view-slide .side-content .content {
+  margin-bottom: 10px;
+}
+
+.App .Products .view-slide .side-content .video {
+  width: 180px;
+  height: 120px;
+  margin: 15px 0;
+}
+
+.App .Products .view-slide .side-content .video img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.App .Products .view-slide .flex-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  position: relative;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 40%;
+}
+
+.App .Products .view-slide .flex-item .Item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content {
+  position: relative;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .mobile-flex-img {
+  display: none;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work:hover .active-cart {
+  opacity: 1;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .main-image {
+  display: block;
+  height: 50vh;
+  -webkit-animation: ReActive1 1s forwards;
+          animation: ReActive1 1s forwards;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .main-image.active {
+  -webkit-animation: ReActive2 1s forwards;
+          animation: ReActive2 1s forwards;
+}
+
+@-webkit-keyframes ReActive1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ReActive1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes ReActive2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ReActive2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart {
+  position: absolute;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(34, 49, 63, 0.9);
+  opacity: 0;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-description {
+  display: none;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-btn-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-btn-action img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.4;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-btn-action .active-cart-btn-price {
+  display: none;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-success {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  width: 100%;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-animation: Success_Add_To_Cart 2s forwards;
+          animation: Success_Add_To_Cart 2s forwards;
+}
+
+@-webkit-keyframes Success_Add_To_Cart {
+  from {
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes Success_Add_To_Cart {
+  from {
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .mobile-main-content {
+  display: none;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content-pagination .button-switch-item {
+  width: 100%;
+  max-width: 18%;
+  height: 3px;
+  border: 1px solid #bc9864;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content-pagination .button-switch-item .button {
+  width: 100%;
+  height: 100%;
+}
+
+.App .Products .view-slide .flex-item .Item .view-content .main-content-pagination .button-switch-item .button.active {
+  width: 100%;
+  height: 100%;
+  -webkit-animation: Active 1s forwards;
+          animation: Active 1s forwards;
+}
+
+@-webkit-keyframes Active {
+  from {
+  }
+  to {
+    background-color: #bc9864;
+  }
+}
+
+@keyframes Active {
+  from {
+  }
+  to {
+    background-color: #bc9864;
+  }
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 400px;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content h3 {
+  font-size: 30px;
+  line-height: 25px;
+  margin: 0 15px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content p {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 15px;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .content1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .content2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .name {
+  font-size: 14px;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .name.break {
+  word-wrap: break-word;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .name.break p {
+  margin-bottom: 10px;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .name.item {
+  font-size: 120px;
+  line-height: 100px;
+  height: 100px;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .name.price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .artist {
+  font-size: 12px;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+.App .Products .view-slide .flex-item .Item .flex-content .flex-img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -448,53 +957,36 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  margin: 10px 15px;
 }
 
-.App #Side-menu .user .avatar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 10vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.App .Products .view-slide .flex-item .Item .flex-content .flex-img img {
+  display: block;
+  display: block;
+  padding: 5px;
+  margin: 0 5px;
 }
 
-.App #Side-menu .user .avatar img {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+.App .Products .view-slide .flex-item .Item .flex-content .flex-img img.active {
+  border-radius: 5px;
+  -webkit-animation: ActiveCurrentImg 0.75s forwards;
+          animation: ActiveCurrentImg 0.75s forwards;
 }
 
-.App #Side-menu .user p {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  color: rgba(255, 255, 255, 0.6);
-  margin-left: 10px;
+@-webkit-keyframes ActiveCurrentImg {
+  from {
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
 }
 
-.App #Side-menu .side {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 10px 0;
-}
-
-.App #Side-menu .side.end {
-  border: none;
-}
-
-.App #Side-menu .side.end a {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.App #Side-menu .item a {
-  color: rgba(255, 255, 255, 0.4);
-  text-decoration: none;
-  text-transform: uppercase;
+@keyframes ActiveCurrentImg {
+  from {
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
 }
 
 .App .Profile {
@@ -549,6 +1041,15 @@
 
 .App .Profile .edit .edit-container .input {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.App .Profile .edit .edit-container .input.password {
+  position: relative;
+  height: 40px;
+  margin-bottom: 15px;
 }
 
 .App .Profile .edit .edit-container .input .info {
@@ -564,8 +1065,29 @@
   background-color: rgba(255, 255, 255, 0.01);
 }
 
+.App .Profile .edit .edit-container .input .info.password {
+  position: absolute;
+}
+
 .App .Profile .edit .edit-container .input .info:focus {
   outline: none;
+}
+
+.App .Profile .edit .edit-container .input .edit {
+  position: absolute;
+  top: 12.5px;
+  right: 10px;
+  height: 15px;
+  width: 15px;
+  opacity: 0.2;
+}
+
+.App .Profile .edit .edit-container .input .close {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  height: 10px;
+  opacity: 0.2;
 }
 
 .App .Profile .edit .edit-container .avatar {
@@ -590,6 +1112,10 @@
   border-radius: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.App .Profile .edit .edit-container .avatar input[type="file"] {
+  display: none;
 }
 
 .App .Profile .edit .edit-container .avatar .camera-icon {
@@ -742,7 +1268,6 @@
   height: 80vh;
   width: 100%;
   max-width: 100%;
-  margin: 0 auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   box-sizing: border-box;
@@ -759,6 +1284,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 15px;
+  margin-top: 10vh;
 }
 
 .App .New-Product .preview .preview-img {
@@ -937,6 +1463,7 @@
   max-width: 40%;
   height: 80vh;
   padding: 15px;
+  margin-top: 10vh;
   -webkit-animation: 1s previewModeOff forwards;
           animation: 1s previewModeOff forwards;
 }
@@ -1310,6 +1837,20 @@
   }
 }
 
+.App .Authentication .content .content-theme-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.App .Authentication .content .content-theme-logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.App .Authentication .content .content-theme-logo p {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .App .Authentication .content .user-info {
   width: 90%;
   min-height: 135px;
@@ -1389,10 +1930,12 @@
 .App .Authentication .content .flex-l1 .sl2 {
   width: 100%;
   max-width: 40%;
+  text-align: right;
 }
 
-.App .Authentication .content .flex-l1 .sl2 p {
-  text-align: right;
+.App .Authentication .content .flex-l1 .sl2 a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .App .Authentication .content .flex-l2 {
@@ -1409,6 +1952,12 @@
   margin-left: 5px;
   height: 20px;
   color: rgba(255, 255, 255, 0.4);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.App .Authentication .content .flex-l2 p a:hover {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .App .Authentication .content .button {
@@ -1443,15 +1992,405 @@
 .App .Authentication .content .cancel a {
   height: 20px;
   color: rgba(255, 255, 255, 0.4);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
-.App .Products {
-  width: 100%;
-  max-width: 90vw;
-  height: 100vh;
-  margin: 0 auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.App .Authentication .content .cancel a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 1366px) {
+  .App .Products .view-slide {
+    margin-top: 15vh;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .main-image {
+    height: 60vh;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .main-image img {
+    height: 100%;
+  }
+  .App #Side-menu .user p {
+    font-size: 12px;
+  }
+  .App #Side-menu .side.end a {
+    font-size: 12px;
+  }
+  .App #Side-menu .side .item a {
+    font-size: 12px;
+  }
+  .App #Side-menu .side .item button {
+    font-size: 12px;
+  }
+  .App .Storage #content-container .container .FilterStorage .NewItem {
+    height: 25px;
+  }
+  .App .Storage #content-container .container .FilterStorage .NewItem .button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 110px;
+  }
+  .App .Storage #content-container .container .FilterStorage .NewItem .button p {
+    font-size: 12px;
+    line-height: 25px;
+  }
+  .App .Storage #content-container .container .FilterStorage .NewItem .button img {
+    height: 15px;
+    width: 15px;
+  }
+  .App .Storage #content-container .container .FilterStorage .SearchBox input {
+    height: 25px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .App .Storage #content-container .container .FilterStorage .SearchBox .icon {
+    width: 27px;
+    height: 27px;
+  }
+  .App .Storage #content-container .container .FilterStorage .SearchBox .icon img {
+    -webkit-transform: translateY(2px) scale(0.9);
+            transform: translateY(2px) scale(0.9);
+  }
+  .App .Storage #content-container .container .listItem .HeaderStorage .tag p {
+    font-size: 12px;
+  }
+  .App .Storage #content-container .container .listItem .item .tag p {
+    font-size: 12px;
+  }
+  .App .Storage #content-container .container .listItem .item .tag.action button {
+    width: 25px;
+    height: 25px;
+  }
+  .App .Storage #content-container .container .listItem .item .tag.action button a {
+    width: 16px;
+    height: 16px;
+  }
+  .App .Storage #content-container .container .listItem .item .tag.action button img {
+    width: 16px;
+    height: 16px;
+  }
+  .App .Storage #content-container .container .PaginationStorage .CurrentPage {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .App .Storage #content-container .container .PaginationStorage .CurrentPage .button {
+    line-height: 25px;
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+  }
+  .App .Storage #content-container .container .PaginationStorage .CurrentPage .button img {
+    height: 11px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .App .Products .view-slide .side-content {
+    width: 100%;
+    max-width: 200px !important;
+  }
+  .App .Products .view-slide .side-content #SidePresent p {
+    font-size: 40px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    line-height: 40px;
+    letter-spacing: 10px;
+  }
+  .App .Products .view-slide .side-content p {
+    font-size: 12px;
+  }
+  .App .Products .view-slide .side-content .content {
+    margin-bottom: 10px;
+  }
+  .App .Products .view-slide .side-content .video {
+    width: 200px !important;
+    height: 80px !important;
+    margin: 15px 0 !important;
+  }
+  .App .Products .view-slide .side-content .video video {
+    display: block;
+    width: 200px !important;
+    height: 80px !important;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .main-image {
+    height: 65vh;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .main-image img {
+    height: 100%;
+  }
+  .App .Products .view-slide .flex-item .Item .flex-content {
+    width: 300px;
+    margin-left: 20px;
+  }
+  .App .Products .view-slide .flex-item .Item .flex-content h3 {
+    font-size: 25px;
+    line-height: 25px;
+    margin: 0 10px;
+  }
+  .App .Products .view-slide .flex-item .Item .flex-content p {
+    font-size: 12px;
+    margin: 0 10px;
+  }
+  .App .Products .view-slide .flex-item .Item .flex-content .name {
+    font-size: 12px;
+  }
+  .App .Products .view-slide .flex-item .Item .flex-content .name.item {
+    font-size: 80px;
+    line-height: 90px;
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .view-slide {
+    margin-top: 20vh;
+  }
+  .view-slide .sidePresentAnimation {
+    display: none;
+  }
+  .view-slide .flex-item {
+    width: 100%;
+    left: 50% !important;
+  }
+  .view-slide .flex-content {
+    margin-left: 30px;
+  }
+  .view-slide #Item {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .App #Header .side-profile {
+    width: 50%;
+  }
+  .App #Header .side-profile .navbar-home {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    height: 100%;
+  }
+  .App #Header .side-profile .navbar-home .Header-navbar {
+    margin-left: 0;
+  }
+  .App #Header .account {
+    display: block;
+  }
+  .App #Header .account a {
+    display: block;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 12px;
+  }
+  .App #Header .navbar .Header-navbar .user {
+    padding: 0;
+  }
+  .App #Header .navbar .Header-navbar .user a {
+    padding: 0;
+  }
+  .App #Header .navbar .Header-navbar .user p {
+    display: none;
+  }
+  .App #Header .navbar .Header-navbar button {
+    display: none;
+  }
+  .App .Products .view-slide .side-content {
+    display: none;
+  }
+  .App .Products .view-slide .flex-item {
+    left: 50%;
+  }
+  .App .Products .view-slide .flex-item .Item {
+    width: 100%;
+    height: 90vh;
+    text-align: center;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content {
+    width: 100%;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content h2 {
+    text-align: left;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content p {
+    text-align: left;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content {
+    width: 100%;
+    height: 70vh;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .mobile {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .mobile.name {
+    font-size: 20px;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .mobile.date {
+    opacity: 0.5;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .mobile-main-content {
+    display: block;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 15px;
+    height: 60vh;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work {
+    position: relative;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work:hover .active-cart {
+    opacity: 1;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart {
+    position: absolute;
+    z-index: 5;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-description p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-btn-action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 15px 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-btn-action p {
+    font-size: 14px;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-btn-action img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.4;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .active-cart .active-cart-btn-action .active-cart-success p {
+    width: 100%;
+    opacity: 0;
+    -webkit-animation: Success_Add_To_Cart 2s forwards;
+            animation: Success_Add_To_Cart 2s forwards;
+  }
+  @-webkit-keyframes Success_Add_To_Cart {
+    from {
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes Success_Add_To_Cart {
+    from {
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .main-flex-item-work .main-image {
+    height: 60vh;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .mobile-flex-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 45px;
+    height: 100%;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .mobile-flex-img .main-image-preview {
+    width: 100%;
+    height: 100%;
+    max-height: 15%;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .mobile-flex-img .main-image-preview img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .main-flex-item .mobile-flex-img .main-image-preview img.active {
+    border-radius: 5px;
+    -webkit-animation: ActiveCurrentImg 0.75s forwards;
+            animation: ActiveCurrentImg 0.75s forwards;
+  }
+  @-webkit-keyframes ActiveCurrentImg {
+    from {
+    }
+    to {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+  @keyframes ActiveCurrentImg {
+    from {
+    }
+    to {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content .mobile-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content-pagination .button-switch-item div {
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    border: 1px solid #bc9864;
+  }
+  .App .Products .view-slide .flex-item .Item .view-content .main-content-pagination .button-switch-item .active {
+    background-color: #bc9864 !important;
+  }
+  .App .Products .view-slide .flex-item .Item .flex-content {
+    display: none;
+  }
 }
 
 * {
